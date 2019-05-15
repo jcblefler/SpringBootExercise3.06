@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Album</title>
+</head>
+<body>
+    <form action="#" th:action="@{/process_album}" th:object="${album}" method="post">
+        <input type="hidden" th:field="*{id}"/>
+        <h2><em>Album</em></h2>
+        Title: <input type="text" th:field="*{title}"><br />
+        <span th:if="${#fields.hasErrors('title')}" th:errors="*{title}"></span><br />
+
+        Band: <input type="text" th:field="*{band}"><br />
+        <span th:if="${#fields.hasErrors('band')}" th:errors="*{band}"></span><br />
+
+        Year: <input type="text" th:field="*{year}"><br />
+        <span th:if="${#fields.hasErrors('year')}" th:errors="*{year}"></span><br />
+
+
+
+        <input type="submit" value="Submit">
+
+    </form>
+</body>
+</html>
