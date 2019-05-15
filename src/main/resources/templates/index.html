@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div th:each="album : ${albums}">
+        <h2 th:text="${album.title}"></h2>
+        <h6 th:inline="text">Released in [[${album.year}]].</h6>
+        <ul>
+            <th:block th:each="song : ${album.songs}">
+                <li><b>[[${song.title}]] :</b> [[${song.length}]] mins.</li>
+            </th:block>
+        </ul>
+
+    </div>
+</body>
+</html>
